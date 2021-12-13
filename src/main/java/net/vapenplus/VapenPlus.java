@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package net.vapenplus;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -9,13 +9,13 @@ import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ExampleMod implements ModInitializer {
+public class VapenPlus implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LogManager.getLogger("modid");
 
-	public static final Item FABRIC_ITEM = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+	public static final Item BATTLEAXE_ITEM = new Item(new FabricItemSettings().group(ItemGroup.COMBAT));
 
 	@Override
 	public void onInitialize() {
@@ -23,7 +23,7 @@ public class ExampleMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric_item"), FABRIC_ITEM);
+		Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric_item"), BATTLEAXE_ITEM);
 		LOGGER.info("Hello Fabric world!");
 	}
 }
